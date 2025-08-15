@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.5.2 (Windows)"/>
+	<meta name="created" content="2025-08-15T12:52:56.550373300"/>
+	<meta name="changed" content="2025-08-15T12:54:46.567595000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p align="center" style="margin-top: 0.42cm; margin-bottom: 0.21cm; line-height: 100%; page-break-after: avoid">
+<font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>Falha
+25317 (ZFILAMSG: a&nbsp;funcao&nbsp;ZRABBIT_conecta&nbsp;retornou
+alguma falha)&nbsp; </b></font></font>
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">O
+que fazer:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Os
+passos abaixo foram realizados:&nbsp;&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1)
+Verificar se o&nbsp;servico&nbsp;estava ativo
+(#&nbsp;systemctl&nbsp;status&nbsp;rabbitmq-server.service)&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">2)
+Caso não, certificar se houve troca de IP ou nome da estação&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3)
+Caso positivo, verificar os&nbsp;diretorio&nbsp;a seguir:&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.1)
+#&nbsp;cd&nbsp;/var/lib/rabbitmq/&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.2)
+Dentro do&nbsp;diretorio, vi que tinha um arquivo oculto
+(.erlang.cookie). O mesmo foi excluído&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.3)&nbsp;Servico&nbsp;foi
+reiniciado porem não deu certo&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.4)
+Acessei o&nbsp;diretorio&nbsp;mnesia&nbsp;e depois
+o&nbsp;diretorio&nbsp;rabbit@NOMEDOPDV&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.5)
+Olhei o arquivo&nbsp;cluster_nodes.config&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.6)
+Olhei também o LATEST.LOG&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.7)
+Olhei também o&nbsp;nodes_running_at_shutdown&nbsp;e feito alguma
+comparação com outro PDV neste arquivo&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.8)
+Após ajustar alguma situação incoerente, fiz o reinicio
+do&nbsp;rabbitmq-server (systemctl&nbsp;restart&nbsp;rabbitmq-server.service)&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3.9)
+Certifiquei que o&nbsp;servico&nbsp;foi ativado novamente (com
+sucesso)&nbsp;&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Na
+CT31, em 1 PDV exclui o&nbsp;diretorio&nbsp;e arquivo com o nome
+errado (rabbit@NOMEDOPDV), reiniciei o PDV e subiu
+o&nbsp;rabbitmq&nbsp;normalmente. O único enrosco é que ele não
+alterou o&nbsp;usuario&nbsp;zanthus&nbsp;pelo script
+acertarabbitmq.sh (esta&nbsp;na&nbsp;debs), tendo que fazer na mão o
+processo...&nbsp;&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="line-height: 100%; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>
