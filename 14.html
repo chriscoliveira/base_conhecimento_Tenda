@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.5.2 (Windows)"/>
+	<meta name="created" content="2025-08-15T12:52:56.550373300"/>
+	<meta name="changed" content="2025-08-15T13:17:27.131916100"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p align="center">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>Servidor&nbsp;nao&nbsp;compartilha
+a&nbsp;path_comum&nbsp; </b></font></font></span>
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">O
+que fazer:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Verificar
+se o&nbsp;diretorio&nbsp;/mnt/path_comumXX&nbsp;(XX&nbsp;siginifica&nbsp;Unidade:
+08, 09, 13, 38, 59, etc..) existe. Caso&nbsp;nao&nbsp;exista, criar
+com os comandos a seguir:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">mkdir&nbsp;-p
+/mnt/path_comumXX&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Executar
+os comandos de permissão:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">#&nbsp;chown&nbsp;-R&nbsp;root:zanthuspdv&nbsp;/mnt/path_comumXX&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">#&nbsp;chmod&nbsp;775
+-R /mnt/path_comumXX&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Para
+testar o compartilhamento:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">smbclient&nbsp;-L&nbsp;localhost&nbsp;-U&nbsp;zanthus.
+Ira solicitar a senha. Usar a mesma do&nbsp;usuario&nbsp;zanthus&nbsp;cadastrado
+no AD. A&nbsp;saida&nbsp;devera&nbsp;ser parecida com esta:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">##############################################&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Enter&nbsp;TENDA\zanthus's&nbsp;password:&nbsp;&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Sharename&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comment&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">---------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -------&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">path_comum34&nbsp;&nbsp;&nbsp;
+Disk&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Path da CT34-PINDAMONHANGABA&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">IPC$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+IPC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IPC&nbsp;Service
+(SRVTCCT34 server (Samba, Ubuntu))&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">SMB1&nbsp;disabled&nbsp;--
+no workgroup&nbsp;available&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">##############################################&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Caso
+coloque a senha ele dê erro, temos algumas situações a seguir:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1)
+Resetar a senha do&nbsp;usuario&nbsp;zanthus&nbsp;no Server
+7:&nbsp;smbpasswd&nbsp;-a&nbsp;zanthus. Quando solicitar a senha,
+usar a mesma do&nbsp;usuario&nbsp;zanthus&nbsp;cadastrado no AD.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">2)
+Revisitar o arquivo&nbsp;smb.conf&nbsp;e verificar se as informações
+do compartilhamento esta corretas (nome,
+local,&nbsp;usuarios&nbsp;permitidos,&nbsp;etc)&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3)
+Em alguns casos, precisa ser verifica se os&nbsp;usuarios&nbsp;de
+acesso a&nbsp;path_comum&nbsp;esta&nbsp;cadastrados localmente no
+Servidor. Para tal, acessar o arquivo /etc/passwd&nbsp;e procurar
+pelos&nbsp;usuarios:&nbsp;zanthus,&nbsp;admzanthus,&nbsp;usradmXX.
+Caso&nbsp;nao&nbsp;exista algum destes, cadastrar com o comando a
+seguir:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">#&nbsp;adduser&nbsp;usuario&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Ele&nbsp;ira&nbsp;pedir
+a senha e algumas&nbsp;informaçoes&nbsp;do&nbsp;usuario&nbsp;em
+cadastramento. Na parte de informações, caso&nbsp;nao&nbsp;queira
+cadastrar nada,&nbsp;so&nbsp;pressionar ENTER&nbsp;ate&nbsp;terminar.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Aqui
+vou colocar um comparativo de como ele&nbsp;devera&nbsp;ser
+configurado o arquivo&nbsp;smb.conf&nbsp;(/etc/samba)&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">######################################################################&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">[global]&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">workgroup =
+TENDA&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">realm&nbsp;=
+TENDA.COM.BR&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">server&nbsp;string&nbsp;=
+%h server (Samba, Ubuntu)&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">server role
+=&nbsp;standalone&nbsp;server&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">map&nbsp;to&nbsp;guest&nbsp;=&nbsp;Bad&nbsp;User&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">os&nbsp;level&nbsp;=
+33&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">obey&nbsp;pam&nbsp;restrictions&nbsp;=
+Yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">pam&nbsp;password&nbsp;change&nbsp;=
+Yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">passwd&nbsp;program&nbsp;=
+/usr/bin/passwd&nbsp;%u&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">passwd&nbsp;chat
+= *Enter\snew\s*\spassword:* %n\n *Retype\snew\s*\spassword:* %n\n
+*password\supdated\ssuccessfully* .&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">unix&nbsp;password&nbsp;sync&nbsp;=
+Yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;syslog&nbsp;=
+10&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">log&nbsp;level&nbsp;=
+10&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">log file =
+/var/log/samba/log.%m&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">max&nbsp;log&nbsp;size&nbsp;=
+1000&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">server&nbsp;max&nbsp;protocol&nbsp;=
+SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">max&nbsp;protocol&nbsp;=
+SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">protocol&nbsp;=
+SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">server
+min&nbsp;protocol&nbsp;= SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">min&nbsp;protocol&nbsp;=
+SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">client&nbsp;max&nbsp;protocol&nbsp;=
+SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">client&nbsp;min&nbsp;protocol&nbsp;=
+SMB2&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">ntlm&nbsp;auth&nbsp;=&nbsp;yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">dns&nbsp;proxy
+= no&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">usershare&nbsp;allow&nbsp;guests&nbsp;=
+no&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">panic&nbsp;action&nbsp;=
+/usr/share/samba/panic-action&nbsp;%d&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">idmap&nbsp;config&nbsp;*
+:&nbsp;backend&nbsp;=&nbsp;tdb&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">deadtime&nbsp;=
+60&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">[path_comum34]&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">path =
+/mnt/path_comum34&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">public&nbsp;=&nbsp;yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">comment&nbsp;=
+Path da CT34-PINDAMONHANGABA&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">browseable&nbsp;=&nbsp;yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">writable&nbsp;=&nbsp;yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">read&nbsp;only&nbsp;=
+no&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">guest&nbsp;ok
+= no&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">create&nbsp;mask&nbsp;=
+0777&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">directory&nbsp;mask&nbsp;=
+0777&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">available&nbsp;=&nbsp;yes&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="3" style="font-size: 13pt"><span lang="pt-BR">force&nbsp;group&nbsp;=&nbsp;zanthuspdv&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">valid&nbsp;users&nbsp;=&nbsp;zanthus,&nbsp;admzanthus,
+usradm34&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="3" style="font-size: 13pt"><span lang="pt-BR">max&nbsp;smbd&nbsp;processes
+= 100&nbsp;</span></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">######################################################################&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

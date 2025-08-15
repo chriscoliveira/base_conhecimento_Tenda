@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.5.2 (Windows)"/>
+	<meta name="created" content="2025-08-15T12:52:56.550373300"/>
+	<meta name="changed" content="2025-08-15T13:18:15.240329600"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p align="center">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b>PDVs&nbsp;todos
+travados ou lentidão &nbsp; </b></font></font></span>
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">O
+que fazer:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1)
+Verificar o consumo do Servidor. Geralmente quando
+há&nbsp;varias&nbsp;conexoes&nbsp;SMB abertas no Servidor, ele acaba
+consumindo CPU e RAM, chegando ao ponto de travar o Servidor.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Para
+corrigir: retire o Server da rede, assim que para de receber
+mensagens do PDV e demais compartilhados. Abra um terminal no Server
+7 e digite:&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">#&nbsp;sudo&nbsp;systemctl&nbsp;stop&nbsp;smbd&nbsp;nmbd.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Isto&nbsp;ira&nbsp;parar
+o&nbsp;servico&nbsp;do SAMBA.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">Com
+este parado, verificar se a&nbsp;config&nbsp;do
+arquivo&nbsp;smb.conf&nbsp;(/etc/samba/smb.conf) está parecida com o
+exemplo acima. Em um caso na CT08, o arquivo estava com uma linha em
+um bloco errado, podendo ser um&nbsp;possivel&nbsp;ofensor. Outra
+situação a ser observada é a versão do Kernel dos Selfs. Caso
+estes estejam numa versão abaixo de 5.3, esta&nbsp;podera&nbsp;causar
+criar&nbsp;varias&nbsp;conexões na porta 445 (SAMBA) do Servidor 7.
+Caso o Self esteja com esta versão, acessar a
+o&nbsp;diretorio&nbsp;debs&nbsp;na&nbsp;path_comum,&nbsp;sub-dir&nbsp;install-kernel_5_3_0
+e executar o script: install-kernel_5_3_0.sh. Isto ira atualizar o
+kernel para 5.3 ou superior.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm">&nbsp;&nbsp;</span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">2)&nbsp;Possivel&nbsp;PDV
+com logs excedendo o tamanho do&nbsp;storage. Consultar a seção
+BASE_CONHECIMENTO\PDV e verificar informações.&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

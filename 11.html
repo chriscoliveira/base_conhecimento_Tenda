@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.5.2 (Windows)"/>
+	<meta name="created" content="2025-08-15T12:52:56.550373300"/>
+	<meta name="changed" content="2025-08-15T13:14:00.518136500"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p align="center" style="margin-top: 0.42cm; margin-bottom: 0.21cm; line-height: 100%; page-break-after: avoid">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b><font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><span lang="pt-BR">Teste
+scaner / balança</span></font></font><span lang="pt-BR"> &nbsp; </span>&nbsp;</span>
+ </b></font></font>
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">para
+verificar o funcionamento dos equipamentos no terminal&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font color="#2a6099"><font size="3" style="font-size: 13pt"><b>ls&nbsp;-lhs&nbsp;/dev/serial/by-id/*&nbsp;</b></font></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">/dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+-&gt; ../../ttyUSB0
+/dev/serial/by-id/usb-GERTEC_PPC930_Pinpad_Terminal-if00 -&gt;
+../../ttyACM2 /dev/serial/by-id/usb-Sweda_SI-300_SI-300-if00 -&gt;
+../../ttyACM0 /dev/serial/by-id/usb-TOLEDO_CDC_DEVICE_0123456789-if00
+-&gt; ../../ttyACM1&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">para
+ver qual porta com&nbsp;esta&nbsp;associado&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font color="#2a6099"><font size="3" style="font-size: 13pt"><b>ls&nbsp;-lhs&nbsp;/dev/tty*&nbsp;</b></font></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">0&nbsp;crw-rw----
+1 root&nbsp;dialout&nbsp;166, 0&nbsp;Ago&nbsp;5 13:13 /dev/ttyACM0
+0&nbsp;crw-rw---- 1 root&nbsp;dialout&nbsp;166, 1&nbsp;Ago&nbsp;5
+13:13 /dev/ttyACM1 0&nbsp;crw-rw---- 1 root&nbsp;dialout&nbsp;166,
+2&nbsp;Ago&nbsp;5 13:09 /dev/ttyACM2 0&nbsp;lrwxrwxrwx&nbsp;1
+root&nbsp;root&nbsp;15&nbsp;Ago&nbsp;4 07:05 /dev/ttyBIO1 -&gt;
+bus/usb/001/002 0&nbsp;lrwxrwxrwx&nbsp;1 root&nbsp;root&nbsp;7&nbsp;Ago&nbsp;5
+01:04 /dev/ttyPIN&nbsp;-&gt; ttyACM2 0&nbsp;crw------- 1 root&nbsp;root&nbsp;5,
+3&nbsp;Ago&nbsp;4 07:05 /dev/ttyprintk&nbsp;0&nbsp;crwxrwxrwx&nbsp;1
+root&nbsp;dialout&nbsp;4, 64&nbsp;Ago&nbsp;4 07:05 /dev/ttyS0
+0&nbsp;crwxrwxrwx&nbsp;1 root&nbsp;dialout&nbsp;4, 65&nbsp;Ago&nbsp;4
+07:05 /dev/ttyS1 0&nbsp;crwxrwxrwx&nbsp;1 root&nbsp;dialout&nbsp;4,
+66&nbsp;Ago&nbsp;4 07:05 /dev/ttyS2 0&nbsp;lrwxrwxrwx&nbsp;1
+root&nbsp;root&nbsp;12&nbsp;Ago&nbsp;5 13:11 /dev/ttyS3 -&gt;
+/dev/ttyACM1 0&nbsp;crw-rw---- 1 root&nbsp;dialout&nbsp;188, 0&nbsp;Ago&nbsp;5
+13:12 /dev/ttyUSB0&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">para
+testar a comunicação&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font color="#2a6099"><font size="3" style="font-size: 13pt"><b>minicom&nbsp;-D
+/dev/ttyACM1 -b 9600&nbsp;</b></font></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font color="#2a6099"><font size="3" style="font-size: 13pt"><b>minicom&nbsp;-D
+/dev/ttyS3 -b 9600&nbsp;</b></font></font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+</body>
+</html>

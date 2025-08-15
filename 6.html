@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.2.5.2 (Windows)"/>
+	<meta name="created" content="2025-08-15T12:52:56.550373300"/>
+	<meta name="changed" content="2025-08-15T13:07:43.072248200"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		p { line-height: 115%; margin-bottom: 0.25cm; background: transparent }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="pt-BR" link="#000080" vlink="#800000" dir="ltr"><p align="center" style="margin-top: 0.42cm; margin-bottom: 0.21cm; line-height: 100%; page-break-after: avoid">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Liberation Sans, sans-serif"><font size="6" style="font-size: 28pt"><b><span lang="pt-BR">Falha
+836 (Balanca&nbsp;SELF)&nbsp; </span>&nbsp;</span>  </b></font></font>
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">O
+que fazer:&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1)
+Verificar se as&nbsp;configs&nbsp;da&nbsp;balana&nbsp;no
+Self&nbsp;estao&nbsp;corretas.&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">2)
+Verificar se o&nbsp;servico&nbsp;setaserial.service&nbsp;esta&nbsp;ativo
+(systemctl&nbsp;status&nbsp;setaserial.service). Caso&nbsp;nao,
+ativar (no comando anterior, trocar status por start). Outra checagem
+é verificar se o script&nbsp;setaserial&nbsp;esta&nbsp;em
+/usr/local/bin.&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">3)
+Verificar se o link&nbsp;simbolico&nbsp;de&nbsp;ttyACMx&nbsp;(aqui,
+x&nbsp;sginifica&nbsp;numeracao: 1, 2, 3, etc. Ex.: ttyACM2) para
+ttyS3 (COM4)&nbsp;esta&nbsp;ativo&nbsp;atraves&nbsp;do
+comando:&nbsp;ls&nbsp;-lhs&nbsp;/dev/tty*. Ele devera exibir um link
+na cor azulada parecido com este a seguir: ttyS3 -&gt;&nbsp;ttyACMx.
+Caso&nbsp;nao&nbsp;esteja, pode-se reiniciar o&nbsp;servico&nbsp;acima
+ou rodar o script mencionado diretamente no terminal para ele
+&quot;reconstruir&quot; o link. Porém é necessário ficar atento ao
+cabeamento da balança. Se o mesmo estiver com problemas (torcido,
+cortado,&nbsp;etc),&nbsp;podera&nbsp;nem exibir a balança no
+terminal. Para&nbsp;exbir&nbsp;os&nbsp;perifericos&nbsp;USB em tempo
+real:&nbsp;watch&nbsp;-n1&nbsp;lsusb.&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">As&nbsp;IDs&nbsp;principais
+são:&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">2aca:2207
+-&gt;&nbsp;Balanca&nbsp;Toledo 120KG&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1c8a:3a17
+-&gt; SWEDA SI-300V1&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1fc9:2014
+-&gt; Sweda SIX&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1491:0020
+-&gt; Biometria CIS&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1753:c902
+-&gt;&nbsp;Pinpad&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">05f9:4002
+-&gt; Scanner torre USB&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">1a86:7523
+-&gt; Sinaleiro (Arduino Pirulito)&nbsp;</font></span></p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="3" style="font-size: 13pt">0000:0400
+-&gt;&nbsp;Balanca&nbsp;Laurenti 120KG&nbsp;</font></span></p>
+<p style="border: none; padding: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p style="margin-left: 1.25cm; border: none; padding: 0cm; margin-bottom: 0cm">
+<br/>
+
+</p>
+</body>
+</html>
